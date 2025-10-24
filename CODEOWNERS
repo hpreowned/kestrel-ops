@@ -1,0 +1,3 @@
+# kestrel-ops ownership (see adr/0009-team-boundaries-and-codeowners.md)
+*               @kestrel/platform-team
+/adr/           @kestrel/architecture-guild
