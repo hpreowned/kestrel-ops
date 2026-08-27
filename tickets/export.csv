@@ -1,0 +1,25 @@
+id,title,status,component,owner_team,files,created,closed
+BOOK-377,carriers FK missing on JPA entity,open,booking,@kestrel/booking-team,booking/src/main/resources/db/schema.sql;booking/src/main/java/com/kestrel/booking/domain/Shipment.java,2026-05-19,
+BOOK-398,Double booking incident follow-up (advisory lock),closed,booking,@kestrel/booking-team,booking/src/main/java/com/kestrel/booking/service/BookingService.java;booking/src/main/java/com/kestrel/booking/lock/AdvisoryLock.java;booking/src/main/java/com/kestrel/booking/lock/PostgresAdvisoryLock.java;booking/src/main/java/com/kestrel/booking/lock/InMemoryAdvisoryLock.java,2026-06-14,2026-06-26
+BOOK-401,"Concurrent reserve test (50 threads, same reference)",done,booking,@kestrel/booking-team,booking/src/test/java/com/kestrel/booking/service/BookingServiceConcurrencyTest.java,2026-06-15,2026-06-30
+BOOK-405,Alert on advisory lock waits longer than 2 seconds,done,booking,@kestrel/booking-team,runbooks/booking-restart.md,2026-06-18,2026-07-08
+BOOK-409,Replace global limiter with per-carrier CarrierRateLimiter,done,booking,@kestrel/booking-team,booking/src/main/java/com/kestrel/booking/ratelimit/CarrierRateLimiter.java;booking/src/main/resources/application.yml,2026-08-22,2026-09-01
+BOOK-412,Add eta_confidence to the /v2/shipments response,done,booking,@kestrel/booking-team,booking/src/main/java/com/kestrel/booking/web/dto/ShipmentResponse.java;booking/src/main/java/com/kestrel/booking/service/EtaConfidenceScorer.java;booking/src/main/resources/application.yml,2026-09-03,2026-09-18
+BOOK-418,Review NSL and BLX rps overrides against carrier SLA caps,open,booking,@kestrel/booking-team,booking/src/main/java/com/kestrel/booking/ratelimit/CarrierRateLimiter.java,2026-09-10,
+GW-84,Structured 504 body when pricing times out,done,gateway,@kestrel/platform-team,gateway/gateway/errors.py,2026-03-03,2026-03-10
+GW-96,Gateway must not retry reserve on timeout,done,gateway,@kestrel/platform-team,gateway/gateway/clients/booking.py,2026-06-15,2026-06-22
+GW-102,Remove dead legacy/pricing_v1.py,open,gateway,@kestrel/platform-team,gateway/gateway/legacy/pricing_v1.py,2026-06-30,
+GW-110,Translate upstream 429 to 503 'booking temporarily unavailable',done,gateway,@kestrel/platform-team,gateway/gateway/clients/booking.py;gateway/gateway/errors.py,2026-08-22,2026-08-25
+GW-118,Gateway ShipmentOut missing eta_confidence,open,gateway,@kestrel/platform-team,gateway/gateway/models.py;gateway/gateway/clients/booking.py,2026-09-19,
+PRC-211,Reload tariffs into a new snapshot and swap atomically,done,pricing,@kestrel/pricing-team,pricing/src/Kestrel.Pricing/Tariffs/TariffStore.cs;pricing/src/Kestrel.Pricing/Tariffs/TariffLoaderFactory.cs,2026-03-02,2026-03-20
+PRC-214,Alert and log when tariff reload exceeds 5 seconds,done,pricing,@kestrel/pricing-team,pricing/src/Kestrel.Pricing/Tariffs/TariffStore.cs,2026-03-04,2026-03-12
+PRC-233,Rounding mismatch: fuel surcharge Math.Round vs Money.Round (pricing and web),open,pricing,@kestrel/pricing-team,pricing/src/Kestrel.Pricing/Calculation/QuoteCalculator.cs;kestrel-web/src/lib/money.ts,2026-09-24,
+PRC-240,Remove LegacyTariffLoader?,closed,pricing,@kestrel/pricing-team,pricing/src/Kestrel.Pricing/Tariffs/LegacyTariffLoader.cs;pricing/src/Kestrel.Pricing/Tariffs/TariffLoaderFactory.cs;pricing/src/Kestrel.Pricing/appsettings.json,2026-10-02,2026-10-05
+WEB-62,Disable Reserve button while request in flight,done,web,@kestrel/web-team,kestrel-web/src/pages/ShipmentDetail.tsx,2026-06-15,2026-06-20
+WEB-71,No automatic retry on reserve; calm error copy,done,web,@kestrel/web-team,kestrel-web/src/api/client.ts;kestrel-web/src/lib/copy.ts,2026-08-22,2026-08-30
+WEB-77,Web Shipment type missing eta_confidence,open,web,@kestrel/web-team,kestrel-web/src/api/types.ts;kestrel-web/src/api/wire.ts;kestrel-web/src/api/mappers.ts,2026-09-19,
+OPS-38,Add tariff size and load-time check to carrier onboarding,closed,ops,@kestrel/platform-team,runbooks/carrier-onboarding.md,2026-03-03,2026-03-27
+OPS-44,Postmortem template and blameless review process,closed,ops,@kestrel/platform-team,policies/on-call-policy.md,2026-06-16,2026-06-30
+OPS-49,Alert when booking 429 rate exceeds 5 percent,closed,ops,@kestrel/platform-team,runbooks/gateway-429-storm.md,2026-08-22,2026-08-27
+OPS-51,On-call policy rewrite,closed,ops,@kestrel/platform-team,policies/on-call-policy.md;policies/on-call-policy.pdf,2026-09-07,2026-10-01
+OPS-53,Carrier credential rotation reminders,open,ops,@kestrel/platform-team,runbooks/rotate-carrier-credentials.md,2026-10-12,
