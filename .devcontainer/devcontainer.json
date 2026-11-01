@@ -1,7 +1,0 @@
-{
-  "name": "kestrel-ops (adlc)",
-  "image": "ghcr.io/kestrel-freight/adlc-devcontainer:0.1.0",
-  "remoteEnv": { "GRAPHIFY_BACKEND": "none", "GRAPHIFY_NO_TIPS": "1" },
-  "postCreateCommand": "adlc doctor",
-  "customizations": { "vscode": { "extensions": ["GitHub.copilot"] } }
-}
