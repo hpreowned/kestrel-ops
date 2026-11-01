@@ -10,19 +10,19 @@ on:
 jobs:
   contract-lint:
     if: github.event_name == 'pull_request'
-    uses: kestrel-freight/adlc-kit/.github/workflows/adlc-contract-lint.yml@v0.1.3
+    uses: kestrel-freight/adlc-kit/.github/workflows/adlc-contract-lint.yml@v0.1.4
   baseline:
     if: github.event_name == 'push'
-    uses: kestrel-freight/adlc-kit/.github/workflows/adlc-baseline.yml@v0.1.3
+    uses: kestrel-freight/adlc-kit/.github/workflows/adlc-baseline.yml@v0.1.4
     permissions: { contents: write }
   drift:
     if: github.event_name == 'schedule' && github.event.schedule == '17 2 * * *'
-    uses: kestrel-freight/adlc-kit/.github/workflows/adlc-drift.yml@v0.1.3
+    uses: kestrel-freight/adlc-kit/.github/workflows/adlc-drift.yml@v0.1.4
   regress:
     if: github.event_name == 'schedule' && github.event.schedule == '23 3 * * 1'
-    uses: kestrel-freight/adlc-kit/.github/workflows/adlc-regress.yml@v0.1.3
+    uses: kestrel-freight/adlc-kit/.github/workflows/adlc-regress.yml@v0.1.4
     secrets: inherit
   scorecard-upload:
     needs: [regress]
     if: always() && github.event_name == 'schedule'
-    uses: kestrel-freight/adlc-kit/.github/workflows/adlc-scorecard-upload.yml@v0.1.3
+    uses: kestrel-freight/adlc-kit/.github/workflows/adlc-scorecard-upload.yml@v0.1.4

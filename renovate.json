@@ -1,4 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>kestrel-freight/adlc-kit//monitor/renovate-preset.json#v0.1.3"]
+  "extends": ["github>kestrel-freight/adlc-kit//monitor/renovate-preset.json#v0.1.4"]
 }
