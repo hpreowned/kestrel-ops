@@ -1,4 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>hpreowned/adlc-kit//monitor/renovate-preset.json#v0.1.7"]
+  "extends": ["github>hpreowned/adlc-kit//monitor/renovate-preset.json#v0.1.8"]
 }
